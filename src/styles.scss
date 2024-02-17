@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+    font-family: 'starWars';
+    src: url(./assets/Starjedi.ttf);
+}
+@font-face {
+    font-family: 'starHol';
+    src: url(./assets/Starjhol.ttf);
+}
+
+.starWars, .starHol{
+    text-align: center;
+    color: white;
+}
+.starWars{
+    font-family: 'starWars';
+}
+.starHol{
+    font-family: 'starHol';
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+  }
+  
