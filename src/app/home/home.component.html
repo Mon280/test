@@ -1,9 +1,7 @@
-<p>home works!</p>
-
 <div>
-    <ul *ngFor="let item of info">
-      
-            {{ item.name }}
-     
+    <ul>
+      <li *ngFor="let item of data">
+        {{ item?.name }}
+      </li> 
     </ul>
 </div>

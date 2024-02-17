@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StarwarsService } from '../service/starwars.service';
+import { starWarsService } from '../service/starwars.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +8,19 @@ import { StarwarsService } from '../service/starwars.service';
 })
 export class HomeComponent implements OnInit {
 
-  info: any[] = [];
-  constructor(private starWarsService: StarwarsService) { }
+  data: any[] = [];
+  constructor(private starWarsService: starWarsService) { }
 
   ngOnInit(): void {
     this.infoStarWars();
   }
   
   infoStarWars(){
-    this.starWarsService.getInfo().subscribe( info => {
-      this.info = info;
-      console.log(this.info)
+    this.starWarsService.getData().subscribe( data => {
+      this.data = data.results;
+      console.log(this.data)
     })
-  }
+}
+
 
 }
