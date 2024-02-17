@@ -1,39 +1,21 @@
-<div class="div_tittle">
-  <h1 class="starWars animate__animated animate__zoomIn">Prueba para catalyst</h1>
-</div>
-<div class="gray-space">
-  <h4 class="name">POR MONTSE MARTINEZ</h4>
-</div>
-<div>
-  <ul>
-    <li *ngFor="let item of data">
-      {{ item.name }}
-    </li> 
-  </ul>
-</div>
+<div class="container-fluid p-0 m-0">
+  <div class="container p-4">
+    <h1 class="starWars animate__animated animate__zoomIn">Prueba para catalyst</h1>
+  </div>
+  <div class="gray-space">
+    <h6 class="name">POR MONTSE MARTINEZ</h6>
+  </div>
+  <div class="container" *ngFor="let item of data" style="color: white;">
+    <div class="row">
+      <div class="col-md-6">
 
-<div class="mat-elevation-z8">
-  <table mat-table style="color: white;">
-    <!-- Definir columnas de la tabla -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let item"> {{item.name}} </td>
-    </ng-container>
-    <ng-container matColumnDef="age">
-      <th mat-header-cell *matHeaderCellDef> Edad </th>
-      <td mat-cell *matCellDef="let item"> {{item.age}} </td>
-    </ng-container>
-    <ng-container matColumnDef="gender">
-      <th mat-header-cell *matHeaderCellDef> Género </th>
-      <td mat-cell *matCellDef="let item"> {{item.gender}} </td>
-    </ng-container>
+        {{ item.name }}
 
-    <!-- Filas de la tabla -->
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let item of data; columns: displayedColumns;"></tr>
-  </table>
+      </div>
+      <div class="col-md-6">
+       
 
-  <!-- Paginador -->
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
-  </mat-paginator>
+      </div>
+    </div>
+  </div>
 </div>
