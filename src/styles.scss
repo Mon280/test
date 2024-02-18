@@ -15,7 +15,7 @@
 }
 
 .starWars {
-    font-family: 'starWars';
+    font-family: 'starWars'!important;
 }
 
 .starHol {
@@ -27,4 +27,161 @@ body {
     padding: 0;
     margin: 0;
     background-color: black;
+}
+
+.bg_animate {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+}
+
+.header_nav {
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header_nav .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.header_nav h1 {
+    color: #fff;
+    font-family: 'Gagalin';
+}
+
+.header_nav nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* naves */
+
+.nave {
+    background-image: url('assets/nave.png');
+    background-size: cover;
+    opacity: .3;
+    position: absolute;
+    bottom: -300px; 
+    animation: naves 3s linear infinite;
+}
+
+.nave:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.nave:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.nave:nth-child(3) {
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.nave:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.nave:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.nave:nth-child(6) {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.nave:nth-child(7) {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.nave:nth-child(8) {
+    width: 100;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+
+.nave:nth-child(9) {
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.nave:nth-child(10) {
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+
+@keyframes naves {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateX(30px);
+    }
+
+    50% {
+        opacity: .4;
+    }
+
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes movimiento {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

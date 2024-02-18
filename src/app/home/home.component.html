@@ -1,20 +1,70 @@
 <div class="container-fluid p-0 m-0">
+  <!-- Introduccion -->
   <div class="container p-4">
     <h1 class="starWars animate__animated animate__zoomIn">Prueba para catalyst</h1>
   </div>
-  <div class="gray-space">
-    <h6 class="name">POR MONTSE MARTINEZ</h6>
+  <div class="gray-space p-4">
+    <h6 class="name p-0 m-0">POR MONTSE MARTINEZ</h6>
   </div>
-  <div class="container" *ngFor="let item of data" style="color: white;">
-    <div class="row">
-      <div class="col-md-6">
-
-        {{ item.name }}
-
+  <!-- Carrusel -->
+  <div class="row p-0 m-0">
+    <div id="carouselExampleControls" class="p-0 m-0 carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-overlay img_carrusel"
+            style="background-image: url('assets/carrusel/banner4.jpg'); height: 400px; position: relative;">
+            <h2 class="starWars text-white"
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 900;">Conoce a
+              los <br> personajes que amamos</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-overlay img_carrusel"
+            style="background-image: url('assets/carrusel/banner1.jpg'); height: 400px; position: relative;">
+            <h2 class="starWars text-white"
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 900;">Conoce a
+              los <br> personajes que amamos</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-overlay img_carrusel"
+            style="background-image: url('assets/carrusel/mando.jpg'); height: 400px; position: relative;">
+            <h2 class="starWars text-white"
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 900;">Conoce a
+              los <br> personajes que amamos</h2>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-       
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+    </div>
+  </div>
 
+  <!-- Cards -->
+  <div class="container ">
+    <div class="row pb-5 pt-5">
+      <div class="col-md-6 p-4 justify-content-center d-flex" *ngFor="let item of data">
+        <div class="card p-4"
+          style="width: 18rem;background-image: url('assets/superspace.gif'); background-position: center;">
+          <div class="card-body ">
+            <h5 class="card-title text-center starWars text-white p-0 m-0">{{ item.name }}</h5>
+            <div class="row pt-3">
+              <button>Informacion rapida</button>
+
+            </div>
+            <div class="row">
+              <button>Ver detalle</button>
+
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
