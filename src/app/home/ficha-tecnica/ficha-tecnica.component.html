@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="container" *ngIf="character">
+        <div class="col-md-6">
+            <img [src]="character.imageUrl" alt="Imagen del personaje">
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li><strong>Nombre:</strong> {{ character.name }}</li>
+                <li><strong>Altura:</strong> {{ character.height }}</li>
+                <li><strong>Masa:</strong> {{ character.mass }}</li>
+                <li><strong>Color de cabello:</strong> {{ character.hair_color }}</li>
+                <li><strong>Color de piel:</strong> {{ character.skin_color }}</li>
+                <li><strong>Color de ojos:</strong> {{ character.eye_color }}</li>
+                <li><strong>Año de nacimiento:</strong> {{ character.birth_year }}</li>
+                <li><strong>Género:</strong> {{ character.gender }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

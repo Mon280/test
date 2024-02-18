@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { starWarsService } from '../service/starwars.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   selectedCharacter: any = null;
   searchText: string = '';
 
-  constructor(private starWarsService: starWarsService) { }
+  constructor(private starWarsService: starWarsService, private router: Router) { }
 
   ngOnInit(): void {
     this.infoStarWars();
@@ -36,8 +37,7 @@ export class HomeComponent implements OnInit {
 
   applyFilter() {
     this.filteredData = this.data.filter(item => item.name.toLowerCase().includes(this.searchText.toLowerCase()));
-  
-    // Asignar la URL de la imagen a cada elemento de filteredData
+
     this.filteredData.forEach(item => {
       switch (item.name.toLowerCase()) {
         case 'luke skywalker':
@@ -71,12 +71,12 @@ export class HomeComponent implements OnInit {
           item.imageUrl = 'assets/personajes/obi.jpg';
           break;
         default:
-          item.imageUrl = 'assets/personajes/default.png'; 
+          item.imageUrl = 'assets/personajes/default.png';
           break;
       }
     });
   }
-  
+
 
   openModal(character: any) {
     this.selectedCharacter = character;
@@ -85,4 +85,14 @@ export class HomeComponent implements OnInit {
   getImageUrl(index: number): string {
     return this.filteredData[index].imageUrl;
   }
+
+  openFichaTecnica() {
+    if (this.selectedCharacter && this.selectedCharacter.url) {
+      const characterUrl = this.selectedCharacter.url;
+      this.router.navigate(['/ficha-tecnica', btoa(characterUrl)]);
+    } else {
+      console.error('No se puede abrir la ficha técnica porque no se ha seleccionado ningún personaje o el personaje no tiene una URL única.');
+    }
+  }
+  
 }
