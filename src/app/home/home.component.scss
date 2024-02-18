@@ -18,7 +18,7 @@ h1 {
 }
 
 .gray-space {
-  background-color: #0a0b0b;
+  background-color: #1d1e1f;
   border-top: 1px solid yellow;
   width: 100%;
 }
@@ -58,4 +58,20 @@ h1 {
   height: 200px;
   width: 300px;
   object-fit: cover;
+}
+
+input{
+  background-color: #1d1e1f;
+  border: none;
+}
+
+input::placeholder{
+  color: white;
+}
+:host ::ng-deep .modal-content {
+  background-color: #1d1e1f !important;
+}
+
+p{
+  color: white;
 }

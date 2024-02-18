@@ -3,8 +3,8 @@
   <div class="container p-4">
     <h1 class="starWars animate__animated animate__zoomIn">Prueba para catalyst</h1>
   </div>
-  <div class="gray-space p-4">
-    <h6 class="name p-0 m-0">POR MONTSE MARTINEZ</h6>
+  <div class="gray-space p-3">
+    <h6 class="name p-0 m-0">Por Montse Martínez</h6>
   </div>
   <!-- Carrusel -->
   <div class="row p-0 m-0">
@@ -46,65 +46,61 @@
     </div>
   </div>
 
-  <!-- Cards -->
+  <!-- Cards de personajes -->
   <div class="container">
     <div class="row pt-4">
       <h2 class="starWars text-white">Personajes</h2>
     </div>
-    <div class="row">
+    <div class="row pt-4">
       <div class="col-md-12">
-        <input type="text" class="form-control mb-4" placeholder="Buscar personaje..." (input)="applyFilter()"
-        [(ngModel)]="searchText">
+        <input type="text" class="form-control mb-4" placeholder="Escribe el nombre del personaje"
+          (input)="applyFilter()" [(ngModel)]="searchText">
       </div>
-
     </div>
- 
     <div class="row pb-5 pt-5">
       <div class="col-md-4 justify-content-center d-flex" *ngFor="let item of filteredData; let i = index">
-        <div class="card p-4" style="width: 18rem;background-position: center;background-image: url('assets/space.gif');">
+        <div class="card p-4"
+          style="width: 18rem;background-position: center;background-image: url('assets/space.gif');">
           <div class="card-body">
             <div class="row pb-4">
               <img [src]="item.imageUrl" alt="img-personajes" class="rounded-image">
             </div>
-            
-            <h5 class="card-title text-center starWars text-white">{{ item.name }}</h5>
-            <div class="row pt-3">
-              <button type="button" class="btn btn-primary my_btn" (click)="openModal(item)" data-toggle="modal"
-                data-target="#informacionRapidaModal">Información rápida</button>
+            <div class="row">
+              <h5 class="card-title text-center starWars text-white">{{ item.name }}</h5>
             </div>
             <div class="row pt-3">
-              <button class="btn btn-primary my_btn">Ver detalle</button>
+              <button type="button" class="btn btn-primary my_btn" (click)="openModal(item)" data-toggle="modal"
+                data-target="#informacionRapidaModal">Ver detalle</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    
   </div>
-
-
-
-
+  <!-- Fin cards de personajes -->
   <!-- Modal -->
   <div class="modal fade" id="informacionRapidaModal" tabindex="-1" role="dialog"
     aria-labelledby="informacionRapidaModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="background-color: #1d1e1f!important;">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="informacionRapidaModalLabel">Información rápida</h5>
+          <h6 class="modal-title starWars" id="informacionRapidaModalLabel">Detalles generales del personaje</h6>
           <button type="button" class="close " data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body ">
           <ng-container *ngIf="selectedCharacter">
             <p>Nombre: {{ selectedCharacter.name }}</p>
-            <p>Altura: {{ selectedCharacter.height }}</p>
-            <!-- Agrega más campos de información según necesites -->
+            <p>Genero: {{ selectedCharacter.gender }}</p>
+            <p>Año de nacimiento: {{ selectedCharacter.birth_year }}</p>
+            <a href="" class="btn btn-primary my_btn">
+              Ver ficha técnica
+            </a>
           </ng-container>
         </div>
-
       </div>
     </div>
   </div>
+  <!-- Fin modal -->
+  
