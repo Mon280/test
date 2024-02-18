@@ -47,25 +47,64 @@
   </div>
 
   <!-- Cards -->
-  <div class="container ">
+  <div class="container">
+    <div class="row pt-4">
+      <h2 class="starWars text-white">Personajes</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <input type="text" class="form-control mb-4" placeholder="Buscar personaje..." (input)="applyFilter()"
+        [(ngModel)]="searchText">
+      </div>
+
+    </div>
+ 
     <div class="row pb-5 pt-5">
-      <div class="col-md-6 p-4 justify-content-center d-flex" *ngFor="let item of data">
-        <div class="card p-4"
-          style="width: 18rem;background-image: url('assets/superspace.gif'); background-position: center;">
-          <div class="card-body ">
-            <h5 class="card-title text-center starWars text-white p-0 m-0">{{ item.name }}</h5>
+      <div class="col-md-4 justify-content-center d-flex" *ngFor="let item of filteredData; let i = index">
+        <div class="card p-4" style="width: 18rem;background-position: center;background-image: url('assets/space.gif');">
+          <div class="card-body">
+            <div class="row pb-4">
+              <img [src]="item.imageUrl" alt="img-personajes" class="rounded-image">
+            </div>
+            
+            <h5 class="card-title text-center starWars text-white">{{ item.name }}</h5>
             <div class="row pt-3">
-              <button>Informacion rapida</button>
-
+              <button type="button" class="btn btn-primary my_btn" (click)="openModal(item)" data-toggle="modal"
+                data-target="#informacionRapidaModal">Información rápida</button>
             </div>
-            <div class="row">
-              <button>Ver detalle</button>
-
+            <div class="row pt-3">
+              <button class="btn btn-primary my_btn">Ver detalle</button>
             </div>
-
           </div>
         </div>
       </div>
     </div>
+    
+    
   </div>
-</div>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="informacionRapidaModal" tabindex="-1" role="dialog"
+    aria-labelledby="informacionRapidaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="informacionRapidaModalLabel">Información rápida</h5>
+          <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ng-container *ngIf="selectedCharacter">
+            <p>Nombre: {{ selectedCharacter.name }}</p>
+            <p>Altura: {{ selectedCharacter.height }}</p>
+            <!-- Agrega más campos de información según necesites -->
+          </ng-container>
+        </div>
+
+      </div>
+    </div>
+  </div>

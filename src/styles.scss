@@ -65,9 +65,9 @@ body {
 .nave {
     background-image: url('assets/nave.png');
     background-size: cover;
-    opacity: .3;
+    opacity: .4;
     position: absolute;
-    bottom: -300px; 
+    bottom: -300%;
     animation: naves 3s linear infinite;
 }
 
@@ -154,15 +154,12 @@ body {
 
 @keyframes naves {
     0% {
-        bottom: 0;
+        bottom: -100%;
         opacity: 0;
     }
 
     30% {
-        transform: translateX(30px);
-    }
-
-    50% {
+        transform: translateY(0);
         opacity: .4;
     }
 
@@ -171,6 +168,8 @@ body {
         opacity: 0;
     }
 }
+
+
 
 @keyframes movimiento {
     0% {
