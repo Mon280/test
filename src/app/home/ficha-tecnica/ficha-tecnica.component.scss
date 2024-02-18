@@ -1,3 +1,21 @@
 li{
     color: white;
 }
+
+.img{
+    height: 330px;
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+
+body {
+    overflow: hidden; /* Oculta el desbordamiento del cuerpo */
+  }
+  
+  .fixed-page {
+    position: fixed; /* Fija la posición de la página */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+  }

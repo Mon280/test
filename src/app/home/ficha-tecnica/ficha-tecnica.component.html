@@ -1,19 +1,50 @@
-<div class="container-fluid">
+<div class="container-fluid fixed-page">
     <div class="container" *ngIf="character">
-        <div class="col-md-6">
-            <img [src]="character.imageUrl" alt="Imagen del personaje">
+        <div class="row">
+            <h1 class="starWars text-white">{{ character.name }}</h1>
         </div>
-        <div class="col-md-6">
-            <ul>
-                <li><strong>Nombre:</strong> {{ character.name }}</li>
-                <li><strong>Altura:</strong> {{ character.height }}</li>
-                <li><strong>Masa:</strong> {{ character.mass }}</li>
-                <li><strong>Color de cabello:</strong> {{ character.hair_color }}</li>
-                <li><strong>Color de piel:</strong> {{ character.skin_color }}</li>
-                <li><strong>Color de ojos:</strong> {{ character.eye_color }}</li>
-                <li><strong>Año de nacimiento:</strong> {{ character.birth_year }}</li>
-                <li><strong>Género:</strong> {{ character.gender }}</li>
-            </ul>
+        <div class="row pt-4">
+            <div class="col-md-6">
+                <img [src]="character.imageUrl" class="img" alt="Imagen del personaje">
+            </div>
+            <div class="col-md-6">
+                <table class="table table-dark">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td>{{ character.name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Altura</th>
+                            <td>{{ character.height }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Masa</th>
+                            <td>{{ character.mass }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Color de cabello</th>
+                            <td>{{ character.hair_color }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Color de piel</th>
+                            <td>{{ character.skin_color }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Color de ojos</th>
+                            <td>{{ character.eye_color }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Año de nacimiento</th>
+                            <td>{{ character.birth_year }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Género</th>
+                            <td>{{ character.gender }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
