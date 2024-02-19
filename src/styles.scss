@@ -15,7 +15,7 @@
 }
 
 .starWars {
-    font-family: 'starWars'!important;
+    font-family: 'starWars' !important;
 }
 
 .starHol {
@@ -62,6 +62,12 @@ body {
 }
 
 /* naves */
+@media only screen and (max-width: 600px) {
+
+    .nave {
+        display: none;
+    }
+}
 
 .nave {
     background-image: url('assets/nave.png');

@@ -1,21 +1,28 @@
-li{
-    color: white;
+li {
+  color: white;
 }
 
-.img{
-    height: 330px;
-    width: 100%;
-    border-radius: 25px;
-    object-fit: cover;
-    object-position: center;
+.img {
+  height: 330px;
+  width: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+  object-position: center;
 }
 
 body {
-    overflow: hidden; /* Oculta el desbordamiento del cuerpo */
-  }
-  
+  overflow: hidden;
+}
+
+.fixed-page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
   .fixed-page {
-    position: fixed; /* Fija la posición de la página */
-    width: 100%; /* Ocupa todo el ancho */
-    height: 100%; /* Ocupa toda la altura */
+      position: relative!important;
   }
+}
