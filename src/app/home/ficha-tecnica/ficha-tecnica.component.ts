@@ -42,7 +42,7 @@ export class FichaTecnicaComponent implements OnInit {
         character.imageUrl = 'assets/personajes/r2d2.webp';
         break;
       case 'leia organa':
-        character.imageUrl = 'assets/personajes/leia.webp';
+        character.imageUrl = 'assets/personajes/leia2.jpeg';
         break;
       case 'owen lars':
         character.imageUrl = 'assets/personajes/owen.jpeg';

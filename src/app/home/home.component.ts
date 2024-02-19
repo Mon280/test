@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
           item.imageUrl = 'assets/personajes/r2d2.webp';
           break;
         case 'leia organa':
-          item.imageUrl = 'assets/personajes/leia.webp';
+          item.imageUrl = 'assets/personajes/leia2.jpeg';
           break;
         case 'owen lars':
           item.imageUrl = 'assets/personajes/owen.jpeg';
