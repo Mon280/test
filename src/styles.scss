@@ -61,6 +61,19 @@ body {
     margin-right: 10px;
 }
 
+.btn:focus,
+.btn:active,
+.btn.active {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: inherit !important;
+}
+
+.btn:active,
+.btn.active {
+    border-color: red !important;
+}
+
 /* naves */
 @media only screen and (max-width: 600px) {
 
